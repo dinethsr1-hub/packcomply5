@@ -12,7 +12,7 @@ const client = process.env.OPENAI_API_KEY ? new OpenAI({ apiKey: process.env.OPE
 
 app.use(express.json());
 app.get("/", (req,res)=>res.sendFile(path.join(__dirname,"index.html")));
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(__dirname));
 
 function matches(rule,x){
   const t=rule.trigger||{};
