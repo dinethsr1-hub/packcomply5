@@ -11,7 +11,7 @@ const DATA = require("./data.json");
 const client = process.env.OPENAI_API_KEY ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY }) : null;
 
 app.use(express.json());
-app.get("/", (req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
+app.get("/", (req,res)=>res.sendFile(path.join(__dirname,"index.html")));
 app.use(express.static(path.join(__dirname,"public")));
 
 function matches(rule,x){
